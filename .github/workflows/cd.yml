@@ -31,11 +31,12 @@ jobs:
 
       - name: Build package
         run: |
+          cd dummy-project
           python -m build
 
       - name: Check distribution
         run: |
-          twine check dist/*
+          twine check dummy-project/dist/*
 
   create-release:
     runs-on: ubuntu-latest
@@ -88,11 +89,13 @@ jobs:
 
       - name: Build package
         run: |
+          cd dummy-project
           python -m build
 
       - name: Publish to PyPI (if configured)
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
+          packages-dir: dummy-project/dist/
           skip-existing: true
         continue-on-error: true
 
