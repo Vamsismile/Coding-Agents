@@ -25,3 +25,6 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/yourusername/Coding-Agents"
 Repository = "https://github.com/yourusername/Coding-Agents.git"
+
+[tool.setuptools]
+py-modules = ["app"]
