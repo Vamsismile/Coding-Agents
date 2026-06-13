@@ -7,7 +7,7 @@ A collection of coding projects and AI agents.
 ### dummy-project
 
 A minimal Python testing project.
-
+***********************************
 - **Location**: `./dummy-project/`
 - **Language**: Python 3.12+
 - **Main**: `app.py` — simple entrypoint that prints a message
