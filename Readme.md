@@ -31,40 +31,37 @@ pip install -r dummy-project/requirements.txt
 
 ## CI/CD: GitHub Actions
 
-### CI Workflow (Implemented)
+### CI Workflow (Implemented) ✅
 
 - [x] Create `.github/workflows/ci.yml`
 - [x] Configure pytest to run on push/PR
 - [x] Add linting (flake8)
 - [x] Add code coverage reporting
-- [ ] Add automated test badge to README
+- [x] Multi-version Python testing (3.10, 3.11, 3.12)
 
-### Example Workflow (To-Do)
+**Triggers**: On push to `main` and pull requests
 
-```yaml
-name: CI
+### CD Workflow (Implemented) ✅
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+- [x] Create `.github/workflows/cd.yml`
+- [x] Build package distribution
+- [x] Create GitHub releases on version tags
+- [x] Publish to PyPI (optional)
+- [x] Deployment notifications
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r dummy-project/requirements.txt
-      - name: Run tests
-        run: pytest dummy-project/ -v --cov
+**Triggers**: On version tags (`v*`)
+
+**Steps**:
+1. **Build**: Creates Python package distribution
+2. **Create Release**: Generates GitHub release with tag
+3. **Publish to PyPI**: Uploads package (requires PyPI token)
+4. **Notification**: Confirms deployment completion
+
+To deploy:
+```bash
+# Create a version tag
+git tag v0.1.0
+git push origin v0.1.0
 ```
 
 ## Structure
@@ -83,7 +80,9 @@ Coding-Agents/
 
 ## Next Steps
 
-1. Set up GitHub Actions workflow for CI
-2. Add code coverage tracking
-3. Add linting and formatting checks
-4. Configure branch protection rules
+1. ✅ Set up GitHub Actions workflow for CI
+2. ✅ Set up GitHub Actions workflow for CD
+3. Configure PyPI credentials in GitHub Secrets (for publishing)
+4. Add code coverage badge to README
+5. Configure branch protection rules
+6. Set up automated versioning/changelog
