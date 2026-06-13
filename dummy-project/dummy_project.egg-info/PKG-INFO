@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: dummy-project
+Version: 0.1.0
+Summary: A minimal Python testing project
+Author-email: Developer <dev@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/Coding-Agents
+Project-URL: Repository, https://github.com/yourusername/Coding-Agents.git
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# Dummy Project
+
+This is a minimal Python dummy project created for testing.
+
+Usage
+
+- Run: `python app.py`
+
+Files
+
+- `app.py` — simple entrypoint that prints a message
+- `requirements.txt` — dependencies (empty)
+- `.gitignore` — ignores common Python artifacts

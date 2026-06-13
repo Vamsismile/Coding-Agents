@@ -1,0 +1,7 @@
+README.md
+app.py
+pyproject.toml
+dummy_project.egg-info/PKG-INFO
+dummy_project.egg-info/SOURCES.txt
+dummy_project.egg-info/dependency_links.txt
+dummy_project.egg-info/top_level.txt
